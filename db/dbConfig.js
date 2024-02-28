@@ -6,10 +6,12 @@ var dbConnection = mysql.createPool({
     user:'evan_forumdb',
     database:'evan_forumdb',
     connectionLimit:10
-})
+});
 
-dbConnection.execute("select 'connected'", (err, result)=> {
-    if (err) console.log (err.message);
-    else console.log(result);
-})
+// dbConnection.execute("select 'connected'", (err, result)=> {
+//     if (err) console.log (err.message);
+//     else console.log(result);
+// });
+
+module.exports = dbConnection.promise()
 

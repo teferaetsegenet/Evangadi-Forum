@@ -11,12 +11,13 @@ const  {register, login, check} = require('../controler/userControler');
 //     res.send("Hi there")
 // })
 
-// login route
-
-rout.post('/login',login)
 
 // login registration
 rout.post('/register', register)
+
+// login route
+rout.post('/login',login)
+
 
 // check route
 rout.get('/check', check)
