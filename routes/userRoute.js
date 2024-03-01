@@ -1,18 +1,15 @@
 const express = require("express");
 const rout = express.Router();
-const  {register, login, check} = require('../controler/userControler');
-
-// const express = request
 
 
+// user controllers
+const  {register, login, checkUser} = require('../controler/userControler');
+
+// authonthication middleware
+const authMiddleware = require('../middleware/authMiddleware')
 
 
-// rout.get('/',(req,res)=>{
-//     res.send("Hi there")
-// })
-
-
-// login registration
+// registration route
 rout.post('/register', register)
 
 // login route
@@ -20,7 +17,7 @@ rout.post('/login',login)
 
 
 // check route
-rout.get('/check', check)
+rout.get('/check', authMiddleware ,checkUser)
 
 // post method 
 rout.post('/api/users/db',(req,res)=>{

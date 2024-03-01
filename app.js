@@ -3,15 +3,31 @@ const port = 8000;
 
 // server create
 const app = express();
+
+// db connection
 const dbConnection = require('./db/dbConfig')
 
-
+// users routers middleware file
 const userRoutes = require ("./routes/userRoute");
 
+// users routers middleware file
+const questionsRoutes = require ("./routes/questionRoute");
+
+// authentication middleware file
+const authMiddleware = require('./middleware/authMiddleware')
+
+// json middleware to extract json data
 app.use(express.json())
 
-
+// user routes middleware
 app.use('/api/users', userRoutes)
+
+
+// questions routes middleware
+app.use("/api/questions",authMiddleware, questionsRoutes)
+
+
+//  answers routes middleware
 
 
 async function start(){

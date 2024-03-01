@@ -1,6 +1,7 @@
 const dbConnection =require('../db/dbConfig')
 const { StatusCodes } = require('http-status-codes');
 const bcrypt = require ("bcrypt");
+const jwt = require('jsonwebtoken');
 
 
 async function register(req, res) {
@@ -48,14 +49,13 @@ async function login(req, res){
         return res.status(StatusCodes.BAD_REQUEST).json
         ({msg: "Please provide all the required fields" });
     }
-   
     
     try {
         const [user] = await dbConnection.query(
             "SELECT username, usersid, password FROM users WHERE email = ?", [email]
         )
 
-        return res.json({ user: user });
+        // return res.json({ user: user[0].password });
 
     if (user.length == 0){
         return res.status(StatusCodes.BAD_REQUEST).json
@@ -68,15 +68,13 @@ async function login(req, res){
         }
     }
 
+    // ready to return token
+    // if the user email and password is correct return token 
+    const username = user[0].username;
+    const usersid = user[0].userid;
+    const token = jwt.sign({ username, usersid},"secret",{ expiresIn: "1d" })
 
-//     ready to return token 
-//     return res.json({user: user[0].password})
-//     if the user email and password is correct return token 
-//    const username = user[0].username;
-//    const usersid = user[0].usersid;
-//    const token = jwt.sign({username, usersid }, "secrete",{expiresIn: "1d"})
-
-//    return res.status(StatusCodes.OK).json({msg: "user login succesful", token})
+    return res.status(StatusCodes.OK).json({msg: "user login succesful", token})
 
 
 }catch (err) {
@@ -88,13 +86,12 @@ async function login(req, res){
 
 }
 
+async function checkUser(req, res){
+const username = req.user.username
+const usersid = req.user.usersid
 
-
-
-async function check(req, res){
-
-    res.send("user checked");
-
+    res.status(StatusCodes.OK).json({msg: "valid user", username, usersid})
+    // res.send("user checked");
 }
 
-module.exports = {register, login, check}
+module.exports = {register, login, checkUser}
