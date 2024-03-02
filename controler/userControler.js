@@ -71,8 +71,8 @@ async function login(req, res){
     // ready to return token
     // if the user email and password is correct return token 
     const username = user[0].username;
-    const usersid = user[0].userid;
-    const token = jwt.sign({ username, usersid},"secret",{ expiresIn: "1d" })
+    const usersid = user[0].usersid;
+    const token = jwt.sign({ username, usersid}, process.env.JWT_SECRET, { expiresIn: "1d" })
 
     return res.status(StatusCodes.OK).json({msg: "user login succesful", token})
 

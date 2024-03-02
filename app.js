@@ -1,5 +1,13 @@
+require ("dotenv").config()
+
 const express = require('express');
 const port = 8000;
+const authRouter = require("./routes/authRouter")
+
+
+// Routers 
+// app.use(authRouter);
+
 
 // server create
 const app = express();
@@ -18,6 +26,11 @@ const authMiddleware = require('./middleware/authMiddleware')
 
 // json middleware to extract json data
 app.use(express.json())
+
+// test
+app.get("/test", (req, res)=>{
+    res.send("Test Route")
+})
 
 // user routes middleware
 app.use('/api/users', userRoutes)
