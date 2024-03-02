@@ -2,15 +2,15 @@ require ("dotenv").config()
 
 const express = require('express');
 const port = 8000;
-const authRouter = require("./routes/authRouter")
-
-
-// Routers 
-// app.use(authRouter);
+const authRouter = require("./routes/authRouter");
+const cors = require('cors');
 
 
 // server create
 const app = express();
+
+// cors middleware
+app.use(cors());
 
 // db connection
 const dbConnection = require('./db/dbConfig')
@@ -26,6 +26,8 @@ const authMiddleware = require('./middleware/authMiddleware')
 
 // json middleware to extract json data
 app.use(express.json())
+
+
 
 // test
 app.get("/test", (req, res)=>{
