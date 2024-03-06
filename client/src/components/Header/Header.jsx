@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <section>
-      <nav class="navbar p-3 navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar p-3 navbar-expand-lg ">
           <div class="container">
               <a class="navbar-brand" href="#"><img src={logo} alt="" /></a>
       <button class="navbar-toggler" 
@@ -24,18 +24,19 @@ function Header() {
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse jus"
+      <div class="collapse navbar-collapse justify-content-end fw-semibold"
        id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item align-items-center d-flex">
             <a class="nav-link active"
              aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item align-items-center d-flex">
             <a class="nav-link" href="#">How It Works</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+          <li class="nav-item align-items-center ">
+            <a class="nav-link" href="#"><button className="btn btn-primary fw-bold px-5 action-btn">SIGN IN</button></a>
+
           </li>
           
         </ul>

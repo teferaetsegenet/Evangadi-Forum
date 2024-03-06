@@ -5,8 +5,8 @@
 // import { useEffect, useState, createContext } from "react";
 // import axios from "./axiosConfig";
 
+import LandingLayOut from "./pages/LandingLayOut/LandingLayOut";
 
-import Header from "./components/Header/Header";
 
 //  export const AppState = createContext();
 
@@ -48,7 +48,7 @@ function App() {
 
     <div>
 
-    <Header />
+    <LandingLayOut />
 
 
     </div>
