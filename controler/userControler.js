@@ -48,9 +48,8 @@ async function register(req, res) {
 async function login(req, res) {
   const { email, password } = req.body;
   if (!email || !password) {
-    return res
-      .status(StatusCodes.BAD_REQUEST)
-      .json({ msg: "Please provide all the required fields" });
+    return res.status(StatusCodes.BAD_REQUEST).json
+    ({ msg: "Please provide all the required fields" });
   }
 
   try {
@@ -60,18 +59,15 @@ async function login(req, res) {
     );
 
     // return res.json({ user: user[0].password });
-
     if (user.length == 0) {
-      return res
-        .status(StatusCodes.BAD_REQUEST)
-        .json({ msg: "invalid credential" });
+      return res.status(StatusCodes.BAD_REQUEST).json
+      ({ msg: "invalid credential" });
 
       //     // compare the password
       const isMatch = await bcrypt.compare(password, user[0].password);
       if (!isMatch) {
-        return res
-          .status(StatusCodes.BAD_REQUEST)
-          .json({ msg: "invalid credential" });
+        return res.status(StatusCodes.BAD_REQUEST).json
+        ({ msg: "invalid credential" });
       }
     }
 
@@ -80,17 +76,15 @@ async function login(req, res) {
     const username = user[0].username;
     const usersid = user[0].usersid;
     const token = jwt.sign({ username, usersid }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-    });
+      expiresIn: "1d"})
 
-    return res
-      .status(StatusCodes.OK)
-      .json({ msg: "user login succesful", token });
+    return res.status(StatusCodes.OK).json
+    ({ msg: "user login succesful", token, username });
+
   } catch (err) {
     console.log(err.message);
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json({ msg: "something went wrong, please try again" });
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json
+    ({ msg: "something went wrong, please try again" });
   }
   // res.send("You are logged in")
 }
