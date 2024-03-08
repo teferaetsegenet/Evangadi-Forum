@@ -5,14 +5,14 @@ const rout = express.Router();
 
 
 // user controllers
-const  {register, login, checkUser} = require('../controler/userControler');
+const  {signup, login, checkUser} = require('../controler/userControler');
 
 // authonthication middleware
 const authMiddleware = require('../middleware/authMiddleware')
 
 
-// registration route
-rout.post('/register', register)
+// registration route register
+rout.post('/signup', signup)
 
 // login route
 rout.post('/login',login)

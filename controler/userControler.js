@@ -3,7 +3,7 @@ const { StatusCodes } = require("http-status-codes");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-async function register(req, res) {
+async function signup(req, res) {
   const { username, firstname, lastname, email, password } = req.body;
   if (!username || !firstname || !lastname || !email || !password) {
     return res
@@ -97,4 +97,4 @@ async function checkUser(req, res) {
   // res.send("user checked");
 }
 
-module.exports = { register, login, checkUser };
+module.exports = { signup, login, checkUser };

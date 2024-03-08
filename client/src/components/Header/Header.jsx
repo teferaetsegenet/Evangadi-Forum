@@ -3,16 +3,13 @@ import "../../index.css";
 import logo from "../../assets/evangadi-logo.png"
 
 
-
-
-
 function Header() {
 
   return (
     <section>
       <nav class="navbar p-3 navbar-expand-lg ">
-          <div class="container">
-              <a class="navbar-brand" href="#"><img src={logo} alt="" /></a>
+          <div class="container ">
+              <a class="navbar-brand5" href="#"><img src={logo} alt="" /></a>
       <button class="navbar-toggler" 
       type="button" 
       data-bs-toggle="collapse" 
@@ -25,7 +22,7 @@ function Header() {
       </button>
 
       <div class="collapse navbar-collapse justify-content-end fw-semibold"
-       id="navbarNav">
+      id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item align-items-center d-flex">
             <a class="nav-link active"
