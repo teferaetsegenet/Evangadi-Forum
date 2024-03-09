@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 var dbConnection = mysql.createPool({
-    host: 'localhost',
+    host: process.env.HOST,
     port:'3306',
     password: process.env.PASSWORD,
     user: process.env.USER,

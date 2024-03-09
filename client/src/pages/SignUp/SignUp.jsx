@@ -100,7 +100,7 @@ navigate('/login')
           </div>
 
     <div className='p-3'>
-<small>I agree to the privacy policy and terms of service</small>
+<small>I agree to the  <a href="#">privacy policy</a> and  aterms of service</small>
     </div>
 
       <div className='d-grid gap-2'>

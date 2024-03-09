@@ -10,7 +10,7 @@ import '../index.css';
 // function Login() 
 // {
 
-const Login = ({setCurrentPage})=>{
+const Login = ({setcurrentPage})=>{
 
   const navigate = useNavigate();
 
@@ -54,12 +54,12 @@ localStorage.setItem('token', data.token);
   return (
     
   <div className='col card p-5 text-center' >
-
-<div>
-  <h3 className='m-3'>Login to your account</h3>
+      <div>
+          <h3 className='m-3'>Login to your account</h3>
     <p className='mb-5'>
-        Don't have an account? <a href="#" 
-        onClick={()=>setCurrentPage("signup")}
+        Don't have an account? 
+      <a href="#" 
+        onClick={()=>setcurrentPage("signup")}
         className='fw-semibold text-decoration-none text-warning text-decoration-underline'>
           Create a new account
     </a>

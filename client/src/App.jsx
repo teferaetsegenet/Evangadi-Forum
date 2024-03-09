@@ -1,11 +1,8 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-// import Register from "./pages/SignUp";
+// import Login from "./pages/Login";
+// import SignUp from "./pages/SignUp/SignUp";
 import { useEffect, useState, createContext } from "react";
 import axios from "./axiosConfig";
-
-
 import LandingLayOut from "./pages/LandingLayOut/LandingLayOut";
 import Home from "./pages/Home/Home";
 

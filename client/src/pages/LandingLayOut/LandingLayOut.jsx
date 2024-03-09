@@ -9,12 +9,13 @@ const [currentPage, setcurrentPage] = useState("signup")
 
     return (
 
-        <section>
-            < Header />
+            <section>
+        < Header />
     <main 
         className="landing bg-body-tertiary mb-5" 
         style={{
         background: `url(${bg})`, 
+        height:"100%",
         backgroundRepeat: "no-repeat", 
         backgroundSize: "cover" }}>
 
@@ -43,11 +44,10 @@ const [currentPage, setcurrentPage] = useState("signup")
     <button className='btn btn-warning text-white fw-bold py-2 px-5 mt-3' style={{background:"#fe8402"}}>HOW IT WORKS</button>
     </div>
 
-</div>
-
-</section>
-        </main>
+            </div>
         </section>
+    </main>
+</section>
     );
 };
 
