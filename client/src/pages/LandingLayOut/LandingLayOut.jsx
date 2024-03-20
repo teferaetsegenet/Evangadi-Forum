@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import Header from '../../components/Header/Header'
 import bg from "../../assets/bg-svg-f.svg"
-import Login from '../../pages/Login';
-import SignUp from '../SignUp/SignUp';
+import Login from '../../components/Login/Login';
+import SignUp from '../../components/SignUp/SignUp';
+
 
 function LandingLayOut() {
 const [currentPage, setcurrentPage] = useState("signup")

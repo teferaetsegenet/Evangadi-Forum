@@ -46,8 +46,8 @@ navigate('/login');
     {/* //   </Routes> */}
     {/* // </AppState.Provider> */}
     <div>
-    {/* <LandingLayOut /> */}
-    <Home />
+    <LandingLayOut />
+    {/* <Home /> */}
     </div>
     </>
   );

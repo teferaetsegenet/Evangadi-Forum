@@ -1,8 +1,9 @@
 import { useRef } from 'react';
-import axios from '../axiosConfig';
+import axios from '../../axiosConfig';
 import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-import '../index.css';
+
+import '../../index.css';
 
 
 

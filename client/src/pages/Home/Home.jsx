@@ -20,9 +20,10 @@ return (
     </p>
   </div>
 
-    <div className='container mt-2'>
+    <div className='container '>
         <h2>Questions</h2>
     <Question />
+    <Question  />
     <Question  />
     <Question  />
     <Question  />

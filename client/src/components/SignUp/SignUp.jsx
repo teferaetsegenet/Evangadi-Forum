@@ -120,9 +120,6 @@ navigate('/login')
       </div>
       </div>
     </form>
-
-    {/* <a  href="/signup" className=' fw-semibold text-decoration-none text-warning text-decoration-underline'>Create an account?</a> */}
-
     </div> 
 
   );
