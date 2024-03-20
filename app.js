@@ -42,7 +42,7 @@ app.use("/api/questions",authMiddleware, questionsRoutes)
 
 
 //  answers routes middleware
-
+app.use("/ai/answers", authMiddleware, questionsRoutes)
 
 async function start(){
 try {
@@ -55,17 +55,10 @@ try {
     console.log(err.msg);
 }
 }
- start()
+    start()
 
 
-// app.listen(port, (err) =>{
-//     if (err) console.log(err.message);
-//     else console.log(`listening to : port ${port}`);
-// });
 
-// app.get('/',(req,res)=>{
-//     res.send("Hi there")
-// })
 
 
 
