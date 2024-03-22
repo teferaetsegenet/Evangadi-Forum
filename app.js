@@ -3,6 +3,7 @@ const express = require('express');
 const port = 8000;
 const authRouter = require("./routes/authRouter");
 const cors = require('cors');
+const answer = require ('./routes/answerRouter')
 
 
 // server create
@@ -42,7 +43,7 @@ app.use("/api/questions",authMiddleware, questionsRoutes)
 
 
 //  answers routes middleware
-app.use("/ai/answers", authMiddleware, questionsRoutes)
+app.use("/api/answers", authMiddleware, answer)
 
 async function start(){
 try {

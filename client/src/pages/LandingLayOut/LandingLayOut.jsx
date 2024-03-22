@@ -9,8 +9,7 @@ function LandingLayOut() {
 const [currentPage, setcurrentPage] = useState("signup")
 
     return (
-
-            <section>
+    <section>
         < Header />
     <main 
         className="landing bg-body-tertiary mb-5" 
@@ -18,7 +17,7 @@ const [currentPage, setcurrentPage] = useState("signup")
         background: `url(${bg})`, 
         height:"100%",
         backgroundRepeat: "no-repeat", 
-        backgroundSize: "cover" }}>
+        backgroundSize: "cover", }}>
 
 <section className='container d-md-flex pt-5 gap-5 py-5'>
 {/* form login/sign-up */}

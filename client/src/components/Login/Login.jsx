@@ -15,12 +15,14 @@ const Login = ({setcurrentPage})=>{
 
   const navigate = useNavigate();
 
-  const emailDom = useRef();
-  const passwordDom = useRef();
+  // reference for the username and password fields.
+  const emailDom = useRef(null);
+  const passwordDom = useRef(null);
 
   async function handleSubmit(e){
     e.preventDefault();
 
+    // To get the values from the inut fields
   const emailValue= emailDom.current.value;
   const passValue= passwordDom.current.value;
   
@@ -47,18 +49,18 @@ localStorage.setItem('token', data.token);
     }catch(error){
       alert('Something went wrong!')
       // alert(error?.response?.msg)
-    console.log(error.response.data);
+    console.log(error?.response?.data);
     } 
   }
   
 
   return (
-    
+
   <div className='col card p-5 text-center' >
       <div>
           <h3 className='m-3'>Login to your account</h3>
     <p className='mb-5'>
-        Don't have an account? 
+        Don't have an account? {" "}
       <a href="#" 
         onClick={()=>setcurrentPage("signup")}
         className='fw-semibold text-decoration-none text-warning text-decoration-underline'>
@@ -73,12 +75,12 @@ localStorage.setItem('token', data.token);
         <input  ref={emailDom} 
           type ='email'
           className= "form-control p-2" 
-          placeholder= 'Your Email' 
+          placeholder= 'Email address' 
           />
       <input  ref={passwordDom} 
           type ='password'
           className= "form-control p-2" 
-          placeholder= 'Your Password'/>
+          placeholder= 'Password'/>
           </div>
 
       <div className='mt-3'>
@@ -92,16 +94,17 @@ localStorage.setItem('token', data.token);
 
       <div 
       className='d-grid gap-3'>
-        <button 
+        <a href="">
+        <button type='submit'
         className='btn btn-primary action-btn fs-5 fw-semibold'> 
-        Login 
+        Log In 
         </button>
-
+        </a>
         {/* <Link className="btn btn-primary fw-bold px-5 "style={{color:"#fe8402"}} to={"/register"}>Create an account</Link> */}
 
       </div>
     </form>
-    <a  href="/signup" 
+    <a  href="#" 
     className='mt-2 fw-semibold text-decoration-none text-warning text-decoration-underline'>
       Create an account?
     </a>

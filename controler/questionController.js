@@ -18,7 +18,7 @@ async function postQuestion(req, res) {
 
     async function allQuestion (req, res){
         try{
-            const [allquestion] = await dbConnection(
+            const [allquestion] = await dbConnection.query(
                 `SELECT q.questionid, q.usersid, q.title, q.description, u.username
                 FROM questions q
                 JOIN users u ON q.usersid = u.usersid

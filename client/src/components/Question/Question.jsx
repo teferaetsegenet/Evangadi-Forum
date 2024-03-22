@@ -1,32 +1,146 @@
-import React from 'react'
-import { LuUserCircle2 } from "react-icons/lu";
-import { LiaAngleRightSolid } from "react-icons/lia";
+import React, { useEffect, useState, useRef, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
+import axios from "../../axiosConfig";
+import { v4 as uuidv4 } from "uuid";
+import { AppState } from "../../App";
 
-const Question = () => {
-return (
-    <a className='text-decoration-none text-black' href="#">
-    <hr />
-<div className='d-flex justify-content-between mx-3 px-3'>
-    <div className='d-md-flex align-items-center  px-3'>        
-        <div className='user d-flex flex-column align-items-center '>{/* user/ */}
-            <div><LuUserCircle2/></div>
-            <div>Etseg Tefe</div>
+
+    const Question = () => {
+    const navigate = useNavigate();
+    const { users } = useContext(AppState);
+    const token = localStorage.getItem("token");
+
+    const titleDom = useRef(null);
+    const descriptionDom = useRef(null);
+    const tagDom = useRef(null);
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+    const titleValue = titleDom.current.value;
+    const descriptionValue = descriptionDom.current.value;
+    const tagValue = tagDom.current.value;
+    const questionid = uuidv4();
+    const usersid = users.usersid;
+    console.log(usersid);
+    console.log(questionid)
+
+        if (
+        !questionid ||
+        !usersid ||
+        !titleValue ||
+        !descriptionValue ||
+        !tagValue
+        ) {
+        alert("please provide all required fields");
+        return;
+    }
+
+    try {
+        const response = await axios.post(
+        "/questions/postquestions",
+            {
+            questionid: questionid,
+            usersid: usersid,
+            title: titleValue,
+            description: descriptionValue,
+            tag: tagValue,
+            },
+            {
+            headers: {
+            Authorization: "Bearer " + token,
+            },
+            }
+        );
+        titleDom.current.value = "";
+        descriptionDom.current.value = "";
+        tagDom.current.value = "";
+        console.log(response, "response");
+
+      //  if(response.status==201){
+      //   setMessage(response.data.msg)
+      //  }
+        setTimeout(() => {
+            navigate("/");
+            window.location.reload();
+        }, 2000);
+        } catch (error) {
+        alert("something went wrong");
+        console.log(error.response);
+    }
+    }
+    return (
+        <section>
+
+        <div className="container d-flex flex-column align-items-center mt-4 ">
+
+            {/* <div> */}
+            {/*step to write Q  */}
+            {/* <ul>
+                <li> Summarise you problem in one-line title</li>
+                <li> Describe your problem in more detail</li>
+                <li>Describe what you tried and What you expected to happen </li>
+                <li>Review your question and post it to the site </li>
+            </ul> */}
+            {/* </div> */}
         </div>
 
-    <div className=''>{/* question */}
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, libero vero veniam animi blanditiis atque pariatur officia non?
-        </p>
-    </div>
-</div>
+        <div className="d-flex flex-column align-items-center container  shadow-sm p-3 mb-5 bg-body rounded">
+            <div className="mt-5 pt-4">
+            {/* Ask Q Part */}
+            <div>
+                <h3>Ask a Public question </h3>
+            </div>
+            <div className="align-items-center">
+                <p>Go to Question page</p>
+            </div>
+        </div>
 
-  <div>{/* arrow */}
-    <span>< LiaAngleRightSolid /></span>
-</div>
+        <div className="container">
+          {/* form part */}
+            <form action="" onSubmit={handleSubmit}>
+                <div className="mb-2">
+                <input
+                    type="text"
+                    placeholder="Title"
+                    className="form-control "
+                    ref={titleDom}
+                />
+            </div>
 
-    </div>
-    </a>
-)
-}
+            <div>
+                <textarea
+                    class="form-control p-4"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    placeholder="Question Description "
+                    ref={descriptionDom}
+                ></textarea>
+            </div>
 
-export default Question
+            <div>
+                <input
+                    type="text"
+                    placeholder="tag"
+                    className="form-control mt-2 "
+                    ref={tagDom}
+                />
+                </div>
+                <div className=" mt-2">
+                <button
+                    className="btn btn-primary fw-bold px-5 action_btn"
+                    type="Submit"
+                >
+                    Post your Question
+                </button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </section>
+    );
+    };
+
+
+
+export default Question;

@@ -74,7 +74,7 @@ navigate('/login')
         <input  ref={emailDom} 
           type ='email'
           className= "form-control p-2" 
-          placeholder= 'Email' 
+          placeholder= 'Email Address' 
           />
 <div className='d-flex gap-4'>
 <input  ref={firstnameDom} 
@@ -96,7 +96,7 @@ navigate('/login')
       <input  ref={passwordDom} 
           type ='password'
           className= "form-control p-2" 
-          placeholder= 'Your Password'/>
+          placeholder= 'Password'/>
           </div>
 
     <div className='p-3'>
