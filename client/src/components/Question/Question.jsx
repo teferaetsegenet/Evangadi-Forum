@@ -71,7 +71,7 @@ import { AppState } from "../../App";
     }
     return (
         <section>
-
+            <Header />
         <div className="container d-flex flex-column align-items-center mt-4 ">
 
             {/* <div> */}

@@ -111,11 +111,11 @@ return (
   <Header />
 <section className='bg-body-tertiary'>
   <div className='d-flex justify-content-around pt-5'>
-    {/* <a href="#"onClick ={handleAskQuestionClick} className='btn btn-primary action-btn px-5'
+    <a href="#"onClick ={handleAskQuestionClick} className='btn btn-primary action-btn px-5'
     >
       Ask Question 
-    </a> */}
-    <button className='btn btn-primary action-btn px-5'>Ask Question </button>
+    </a>
+    {/* <button className='btn btn-primary action-btn px-5'>Ask Question </button> */}
     <p className='fw-semibold'> 
     <span className='text-warning'>Welcome, </span>Etsege Tefe
     </p>
