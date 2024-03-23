@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header'
 import bg from "../../assets/bg-svg-f.svg"
 import Login from '../../components/Login/Login';
 import SignUp from '../../components/SignUp/SignUp';
+import Footer from '../../components/Footer/Footer';
 
 
 function LandingLayOut() {
@@ -11,6 +12,7 @@ const [currentPage, setcurrentPage] = useState("signup")
     return (
     <section>
         < Header />
+        
     <main 
         className="landing bg-body-tertiary mb-5" 
         style={{
@@ -47,6 +49,7 @@ const [currentPage, setcurrentPage] = useState("signup")
             </div>
         </section>
     </main>
+    <Footer />
 </section>
     );
 };

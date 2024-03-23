@@ -13,7 +13,7 @@ const { user, setuser, token } = useContext(AppState);
 const navigate = useNavigate();
 
 const handleLogout = ()=> {
-  // clear the user and token (assuming the tken is stored in local storage)
+  // clear the user and token (assuming the token is stored in local storage)
   
   localStorage.removeItem('token');
   setuser(null);

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { useRef } from 'react';
 import axios from '../../axiosConfig';
 import { useNavigate } from 'react-router-dom';
@@ -8,19 +9,27 @@ import '../../index.css'
 
 
 
+
 // function SignUp(){
 
-  const SignUp = ({setcurrentPage})=>{
+  const SignUp = ({setcurrentPage}) => {
 
-  const  navigate = useNavigate();
-  const usernameDom = useRef();
-  const firstnameDom = useRef();
-  const lastnameDom = useRef();
-  const emailDom = useRef();
-  const passwordDom = useRef();
+const  navigate = useNavigate();
+
+
+
+
+ // input fields and form submission.
+  const usernameDom = useRef(null);
+  const firstnameDom = useRef(null);
+  const lastnameDom = useRef(null);
+  const emailDom = useRef(null);
+  const passwordDom = useRef(null);
 
 async function handleSubmit(e){
   e.preventDefault();
+
+  // get value from the input 
 const usernameValue= usernameDom.current.value;
 const firstValue= firstnameDom.current.value;
 const lastValue= lastnameDom.current.value;
@@ -68,7 +77,7 @@ navigate('/login')
     Sign In</a>
   </p>
     </div>
-<form onSubmit={handleSubmit}>
+<form onSubmit={handleSubmit} action=''>
         
       <div className='d-flex flex-column gap-3'> 
         <input  ref={emailDom} 
@@ -113,7 +122,7 @@ navigate('/login')
         <p className='d-flex justify-content-center'>
           <a href="#" 
           className='fw-semibold text-decoration-none text-warning' 
-          onClick={()=>setcurrentPage("login")}>
+          onClick={() => setcurrentPage("login")}>
             Already have an account?
             </a>
         </p>

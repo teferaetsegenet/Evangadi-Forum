@@ -13,3 +13,10 @@
     width:100px;
     height:100px;
 }
+.footer-wrapper{
+    background-color: #3b455a;
+    color: white;
+}
+.contact-Info p{
+    color: hsla(0, 0%, 84%, 6);
+}
