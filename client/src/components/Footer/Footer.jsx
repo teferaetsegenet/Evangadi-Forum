@@ -1,6 +1,7 @@
 import React from 'react'
 import "../../index.css"
 import logo from "../../assets/10002.png"
+// import facebook from "../../assets/facebook (1).svg"
 
 
 function Footer() {
@@ -24,27 +25,48 @@ return (
         </button>
         </div>
 
-            <div>
-                <li> <a href="#"><img src=" " alt="" /></a></li>
-                <li> <a href="#"><img src="" alt="" /></a></li>
-                <li> <a href="#"><img src="" alt="" /></a></li>
-        
+    <div className="list-inline d-flex gap-5 p-2 text-decoration-none">
+        <div>
+                <a href="https://www.facebook.com/"target="_blank">
+                    <i class="fa-brands fa-facebook text-white"></i>
+                    </a>
+    </div>
+                
+    <div >
+        <a
+			href="https://www.instagram.com/"
+				target="_blank"
+				>
+			<i className="fa-brands fa-instagram text-white"></i>
+				</a>
             </div>
+            
+    <div >
+        <a
+			href="https://www.youtube.com/c/"
+				target="_blank"
+					>
+					<i className="fa-brands fa-youtube text-white"></i>
+				</a>
+            </div>
+        </div>
     </div>   
 
     <div>
-        <h3 className='titlee'>UseFul Link</h3>
-    <div>
-        <li><a href="#">How it works</a></li>
-        <li><a href="#">Terms of service</a></li>
-        <li><a href="#">Privacy policy</a></li> 
+        <h3 className='titlee pb-4'>UseFul Link</h3>
+    <div className="list-inline ">
+
+        <li><a href="#" className='text-white text-decoration-none'>How it works</a></li>
+        
+        <li><a href="#"className='text-white text-decoration-none'>Terms of service</a></li>
+        <li><a href="#"className='text-white text-decoration-none'>Privacy policy</a></li> 
     </div>
     </div>
 
 
 <div className='row'>    
     <div className=''>
-        <h3 className='titlee'>Contact Info</h3>
+        <h3 className='titlee pb-3'>Contact Info</h3>
         <p className='contact-Info'>Evangadi Networks</p>
         <p>Developed By Etsegenet T</p>
         <p>suport@etsege.com</p>

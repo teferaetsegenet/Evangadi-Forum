@@ -20,3 +20,7 @@
 .contact-Info p{
     color: hsla(0, 0%, 84%, 6);
 }
+.wraper-link li{
+    color: white;
+    text-decoration: none;
+}

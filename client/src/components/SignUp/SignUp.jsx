@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRef } from 'react';
 import axios from '../../axiosConfig';
 import { useNavigate } from 'react-router-dom';
@@ -56,7 +56,7 @@ if(
       password: passValue,
   });
 alert('SignUp successfull. please login ')
-navigate('/login')
+navigate('/')
 
   }catch(error){
     alert('something went wrong!')
@@ -69,7 +69,7 @@ navigate('/login')
 
     <div className='col card p-5 text-center' >
   <div>
-  <h3 className='m-3'>Join the network</h3>
+      <h3 className='m-3'>Join the network</h3>
   <p className='mb-5'>
   Already have an account? <a href="#" 
   onClick={()=>setcurrentPage("login")} 

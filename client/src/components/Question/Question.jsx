@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import axios from "../../axiosConfig";
@@ -104,7 +104,7 @@ import { AppState } from "../../App";
                 <input
                     type="text"
                     placeholder="Title"
-                    className="form-control "
+                    className="form-control"
                     ref={titleDom}
                 />
             </div>
@@ -135,9 +135,9 @@ import { AppState } from "../../App";
                     Post your Question
                 </button>
                 </div>
-            </form>
+                    </form>
+                </div>
             </div>
-        </div>
         </section>
     );
     };
