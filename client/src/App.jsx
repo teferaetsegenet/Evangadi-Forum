@@ -55,7 +55,7 @@ async function getQuestion (){
   useEffect(()=>{
     checkUser();
     getQuestion();
-  }, []); // adding checkUser to the deendency array 
+  }, []); // adding checkUser to the dependency array 
 
   
   return (

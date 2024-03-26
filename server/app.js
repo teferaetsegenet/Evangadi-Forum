@@ -29,7 +29,7 @@ app.use(express.json())
 
 //TO check if the deployment is successful
 app.get("/", (req, res) => {
-    res.send ({message: "Welcome to the backend" })
+    res.send({message: "Welcome to the backend" })
 })
 
 // test

@@ -10,9 +10,9 @@ import { AiOutlineYoutube } from "react-icons/ai";
 function Footer() {
 return (
 <footer className='footer-wrapper d-md-flex justify-content-around background pt-5'>
-    <div className='logo-icon-wrapper'>
+    <div className='logo-icon-wrapper '>
 
-        <div className='logo'>
+        <div className='logo pb-2'>
             {/* <img src={logo} alt="" /> */}
 
             <a className="navbar-brand" href="#"><img src={logo} alt="EvangadiLogo" /></a>
@@ -28,7 +28,7 @@ return (
         </button>
         </div>
 
-    <div className="list-inline d-flex gap-5 p-2 text-decoration-none">
+    <div className="list-inline d-flex gap-5 p-2 text-decoration-none ">
         <div>
                 <a href="https://www.facebook.com/"target="_blank">
                 <CiFacebook className='icon' />
@@ -59,13 +59,12 @@ return (
         <h3 className='titlee pb-4'>UseFul Link</h3>
     <div className="list-inline ">
 
-    <ul className='list-menu pb-3'>
         <li><a href="#" className='text-white text-decoration-none'>How it works</a></li>
         
         <li><a href="#"className='text-white text-decoration-none'>Terms of service</a></li>
         <li><a href="#"className='text-white text-decoration-none'>Privacy policy</a>
         </li> 
-        </ul>
+        
     </div>
     </div>
 
@@ -75,7 +74,6 @@ return (
         <h3 className='titlee pb-3'>Contact Info</h3>
         <p className='contact-Info'>Evangadi Networks</p>
         <p>Developed By Etsegenet T</p>
-        <p>suport@etsege.com</p>
         <p>+1-202-386-2702</p>
     </div>
 </div>
