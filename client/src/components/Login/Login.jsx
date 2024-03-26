@@ -44,12 +44,11 @@ const Login = ({setcurrentPage})=>{
 localStorage.setItem('token', data.token);
 
   navigate('/')
-  window.location.reload()
+  // window.location.reload()
   console.log(data);
 
     }catch(error){
-      alert('Something went wrong!')
-      // alert(error?.response?.msg)
+      alert('Something went wrong!......')
     console.log(error?.response?.data);
     } 
   }
