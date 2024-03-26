@@ -1,7 +1,10 @@
 import React from 'react'
 import "../../index.css"
+import  "./footer.css"
 import logo from "../../assets/10002.png"
-// import facebook from "../../assets/facebook (1).svg"
+import { CiFacebook } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa";
+import { AiOutlineYoutube } from "react-icons/ai";
 
 
 function Footer() {
@@ -28,7 +31,7 @@ return (
     <div className="list-inline d-flex gap-5 p-2 text-decoration-none">
         <div>
                 <a href="https://www.facebook.com/"target="_blank">
-                    <i class="fa-brands fa-facebook text-white"></i>
+                <CiFacebook className='icon' />
                     </a>
     </div>
                 
@@ -37,7 +40,7 @@ return (
 			href="https://www.instagram.com/"
 				target="_blank"
 				>
-			<i className="fa-brands fa-instagram text-white"></i>
+			<FaInstagram  className='icon'/>
 				</a>
             </div>
             
@@ -46,7 +49,7 @@ return (
 			href="https://www.youtube.com/c/"
 				target="_blank"
 					>
-					<i className="fa-brands fa-youtube text-white"></i>
+					<AiOutlineYoutube className='icon' />
 				</a>
             </div>
         </div>
@@ -56,10 +59,13 @@ return (
         <h3 className='titlee pb-4'>UseFul Link</h3>
     <div className="list-inline ">
 
+    <ul className='list-menu'>
         <li><a href="#" className='text-white text-decoration-none'>How it works</a></li>
         
         <li><a href="#"className='text-white text-decoration-none'>Terms of service</a></li>
-        <li><a href="#"className='text-white text-decoration-none'>Privacy policy</a></li> 
+        <li><a href="#"className='text-white text-decoration-none'>Privacy policy</a>
+        </li> 
+        </ul>
     </div>
     </div>
 
