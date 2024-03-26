@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { postAnswer, allAnswer } = require('../Controler/answerController')
+const { postAnswer, allAnswer } = require('../controler/answerController')
 
 
 router.post("/postanswers", postAnswer)
