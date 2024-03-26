@@ -27,7 +27,10 @@ const authMiddleware = require('./middleware/authMiddleware')
 // json middleware to extract json data
 app.use(express.json())
 
-
+//TO check if the deployment is successful
+app.get("/", (req, res) => {
+    res.send ({message: "Welcome to the backend" })
+})
 
 // test
 app.get("/test", (req, res)=>{

@@ -59,7 +59,7 @@ return (
         <h3 className='titlee pb-4'>UseFul Link</h3>
     <div className="list-inline ">
 
-    <ul className='list-menu'>
+    <ul className='list-menu pb-3'>
         <li><a href="#" className='text-white text-decoration-none'>How it works</a></li>
         
         <li><a href="#"className='text-white text-decoration-none'>Terms of service</a></li>
@@ -81,7 +81,7 @@ return (
 </div>
     </footer>
     
-  )
+)
 }
 
 export default Footer
