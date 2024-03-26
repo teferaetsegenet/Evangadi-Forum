@@ -44,6 +44,7 @@ const Login = ({setcurrentPage})=>{
 localStorage.setItem('token', data.token);
 
   navigate('/')
+  window.location.reload()
   console.log(data);
 
     }catch(error){
